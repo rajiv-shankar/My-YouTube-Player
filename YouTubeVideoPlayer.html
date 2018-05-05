@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My YouTube Player</title>
+</head>
+
+<body>
+
+  <input id="video">
+  <button type="button" onclick="myFunction()">Submit</button>
+
+  <iframe id="calendar" width="1176" height="662" src="https://www.youtube.com/embed/82hnvUYY6QA"
+    frameborder="0" allow="autoplay; encrypted-media"
+    allowfullscreen></iframe>
+
+</body>
+
+<script>
+
+  function myFunction() {
+
+    var x;
+
+    // Get the value of the input field with id="video"
+    x = document.getElementById("video").value;
+
+    console.log(x);
+
+  }
+
+  function go(x) {
+    document.getElementById('calendar').src = x;
+  }
+</script>
+
+</html>
