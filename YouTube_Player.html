@@ -5,27 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <title>My YouTube Player</title>
+  <link rel="shortcut icon" type="image/png" href="/YouTube_icon.png" />
 </head>
 
 <body style="margin: 0; background-color:powderblue; font-family:verdana; color:navy; text-align:center;" align="center">
   <form>
     Enter YouTube video <em>code</em> only:
-    <!-- 'oninput="myFunction()"' executes JS function on entering input itself (even 'enter' keypress not reqd)-->
-    <input type="text" id="videoID" autofocus value="">
+    <!-- option: 'oninput="myFunction()"' executes function on entering input itself (even 'enter' keypress not reqd)-->
+    <input type="text" id="videoID" value="" autofocus>
     <input type="button" value="Submit" onclick="loadPlayer()">
-    <!-- alt: <button onclick="myFunction()">Submit</button> -->
     (e.g. 82hnvUYY6QA)
   </form>
 
-  <iframe id="player" width="1165" height="655" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe id="player" width="1165" height="655" src="" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
 </body>
 
 <script>
   function loadPlayer() {
+    // replace 'src' attr in <iframe> with...
     document.getElementById("player").src =
+      // base code
       "https://www.youtube.com/embed/" +
-      document.getElementById("videoID").value;
+      // <input> field value
+      document.getElementById("videoID").value +
+      // w/o any related videos
+      "?rel=0";
   }
 </script>
 
